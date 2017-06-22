@@ -8,7 +8,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "/app.js"
+      "start": "node ./app.js",
+      "deploy": "gcloud preview app deploy"
   },
   "repository": {
     "type": "git",
