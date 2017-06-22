@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "This folder contains the sample code for the [Hello world][step-1] tutorial. Please refer to the tutorial for instructions on configuring, running, and deploying this sample.",
   "main": "app.js",
+  "start": "app.js",
   "directories": {
     "test": "test"
   },
@@ -22,5 +23,5 @@
   "dependencies": {
     "express": "^4.15.3",
     "hbs": "^4.0.1"
-  },
+  }
 }
