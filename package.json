@@ -21,7 +21,6 @@
   "homepage": "https://github.com/sbowman96/hellow#readme",
   "dependencies": {
     "express": "^4.15.3",
-    "hbs": "^4.0.1",
-    /*"fs": "0.0.1-security",*/
+    "hbs": "^4.0.1"
   }
 }
