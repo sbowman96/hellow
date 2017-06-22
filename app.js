@@ -1,27 +1,47 @@
-// Copyright 2017, Google, Inc.
-// Licensed under the Apache License, Version 2.0 (the "License");
-// you may not use this file except in compliance with the License.
-// You may obtain a copy of the License at
-//
-//    http://www.apache.org/licenses/LICENSE-2.0
-//
-// Unless required by applicable law or agreed to in writing, software
-// distributed under the License is distributed on an "AS IS" BASIS,
-// WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-// See the License for the specific language governing permissions and
-// limitations under the License.
-
-'use strict';
-
 const express = require('express');
-
+const hbs = require('hbs');
+const fs = require('fs');
 const app = express();
+hbs.registerPartials(__dirname + '/views/partials')
+app.set('view engine', 'hbs');
+//
+// app.get('/', (req, res) => {
+//   res.status(200).send('Hello, cookieworld!');
+//
+// });
+// app.use(express.static(__dirname + '/public'));
+// hbs.registerHelper('getCurrentYear',() => {
+//   return new Date().getFullYear()
+// });
 
-// [START hello_world]
-// Say hello!
-app.get('/', (req, res) => {
-  res.status(200).send('Hello, world!');
+
+app.get ('/' ,(req, res) => {
+    res.render('home.hbs',{
+    pageTitle: 'Home B Page',
+    welcomeMessage: "Welcome to the interactive website",
+})
+app.get('/about', (req, res) => {
+  res.render('about.hbs', {
+    pageTitle: "ABooout Page",
+    });
 });
+
+app.get('/projects', (req, res) => {
+  res.render('projects.hbs', {
+    pageTitle: "Bowmans's Projects Page",
+    });
+});
+
+app.get('/bad', (req, res) => {
+  res.send({
+    errorMessage: 'Unable to help'
+});
+
+});
+
+
+  });
+
 // [END hello_world]
 
 if (module === require.main) {
